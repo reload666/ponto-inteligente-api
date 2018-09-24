@@ -45,7 +45,7 @@ public class FuncionarioRepositoryTest {
 	
 	@Test
 	public void testBuscarFuncionarioPorEmail() {
-		Funcionario funcionario = this.funcionarioRepository.findByemail(EMAIL);
+		Funcionario funcionario = this.funcionarioRepository.findByEmail(EMAIL);
 		
 		assertEquals(EMAIL, funcionario.getEmail());
 	}
