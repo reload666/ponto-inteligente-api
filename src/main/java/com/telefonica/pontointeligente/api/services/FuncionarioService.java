@@ -4,7 +4,6 @@ import java.util.Optional;
 
 import com.telefonica.pontointeligente.api.entities.Funcionario;
 
-import javassist.NotFoundException;
 
 public interface FuncionarioService {
 	
@@ -39,5 +38,5 @@ public interface FuncionarioService {
 	 * @return Optional<Funcionario>
 	 * @throws NotFoundException 
 	 */
-	Optional<Funcionario> buscarPorId(Long id) throws NotFoundException;
+	Optional<Funcionario> buscarPorId(Long id);
 }

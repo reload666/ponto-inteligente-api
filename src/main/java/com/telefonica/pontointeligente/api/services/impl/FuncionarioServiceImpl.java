@@ -1,6 +1,5 @@
 package com.telefonica.pontointeligente.api.services.impl;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -11,8 +10,6 @@ import org.springframework.stereotype.Service;
 import com.telefonica.pontointeligente.api.entities.Funcionario;
 import com.telefonica.pontointeligente.api.repositories.FuncionarioRepository;
 import com.telefonica.pontointeligente.api.services.FuncionarioService;
-
-import javassist.NotFoundException;
 
 @Service
 public class FuncionarioServiceImpl implements FuncionarioService {
@@ -41,7 +38,7 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	}
 	
 	@Override
-	public Optional<Funcionario> buscarPorId(Long id) throws NotFoundException {
+	public Optional<Funcionario> buscarPorId(Long id) {
 		log.info("Persistindo ID: {}", id);
 		Optional<Funcionario> fn = this.funcionarioRepository.findById(id);	
 				
