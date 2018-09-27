@@ -13,9 +13,9 @@ import com.telefonica.pontointeligente.api.services.FuncionarioService;
 
 @Service
 public class FuncionarioServiceImpl implements FuncionarioService {
-	
-	private static final Logger log =  LoggerFactory.getLogger(Funcionario.class);
-	
+
+	private static final Logger log = LoggerFactory.getLogger(Funcionario.class);
+
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
 
@@ -36,15 +36,15 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 		log.info("Persistindo Email: {}", email);
 		return Optional.ofNullable(this.funcionarioRepository.findByEmail(email));
 	}
-	
+
 	@Override
 	public Optional<Funcionario> buscarPorId(Long id) {
 		log.info("Persistindo ID: {}", id);
-		Optional<Funcionario> fn = this.funcionarioRepository.findById(id);	
-				
-		return fn;
+		Optional<Funcionario> funcionario = Optional.empty();
+		funcionario = this.funcionarioRepository.findById(id);
+
+		return funcionario;
+
 	}
-
-
 
 }

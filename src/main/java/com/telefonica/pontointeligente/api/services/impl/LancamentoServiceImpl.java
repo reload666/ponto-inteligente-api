@@ -15,8 +15,8 @@ import com.telefonica.pontointeligente.api.services.LancamentoService;
 
 @Service
 public class LancamentoServiceImpl implements LancamentoService {
-	private static final Logger log =  LoggerFactory.getLogger(Lancamento.class);
-	
+	private static final Logger log = LoggerFactory.getLogger(Lancamento.class);
+
 	@Autowired
 	private LancamentoRepository LancamentoRepository;
 
@@ -29,7 +29,9 @@ public class LancamentoServiceImpl implements LancamentoService {
 	@Override
 	public Optional<Lancamento> buscarPorId(Long id) {
 		log.info("Buscando um lançamento pelo ID {}", id);
-		Optional<Lancamento> lancamento = this.LancamentoRepository.findById(id);
+		Optional<Lancamento> lancamento = Optional.empty();
+		lancamento = this.LancamentoRepository.findById(id);
+		
 		return lancamento;
 	}
 
@@ -43,8 +45,7 @@ public class LancamentoServiceImpl implements LancamentoService {
 	public void remover(Long id) {
 		log.info("Removendo o lançamento ID {}", id);
 		this.LancamentoRepository.deleteById(id);
-		
+
 	}
 
-	
 }
