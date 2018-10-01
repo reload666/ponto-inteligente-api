@@ -80,7 +80,7 @@ public class FuncionarioRepositoryTest {
 
 	private Funcionario obterDadosFuncionario(Empresa empresa) {
 		Funcionario funcionario = new Funcionario();
-		funcionario.setName("Joao da Silva");
+		funcionario.setNome("Joao da Silva");
 		funcionario.setPerfil(PerfilEnum.ROLE_USUARIO);
 		funcionario.setSenha(PasswordUtils.gerarBCrypt("123456"));
 		funcionario.setCpf(CPF);
