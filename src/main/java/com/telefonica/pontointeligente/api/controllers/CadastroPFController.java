@@ -70,12 +70,11 @@ public class CadastroPFController {
 		Optional<Empresa> empresa = this.empresaService.buscarPorCnpj(cadastroPFDto.getCnpj());
 		empresa.ifPresent(emp -> funcionario.setEmpresa(emp));
 		this.funcionarioService.persistir(funcionario);
-		
+
 		response.setData(this.converterCadastroPFDto(funcionario));
 		return ResponseEntity.ok(response);
 
 	}
-
 
 	/**
 	 * Verifica se o funcionário já existem na base de dados.
@@ -104,7 +103,8 @@ public class CadastroPFController {
 	 * @return Funcionario
 	 * @throws NoSuchAlgorithmException
 	 */
-	private Funcionario converterDtoParaFuncionario(@Valid CadastroPFDto cadastroPFDto, BindingResult result) throws NoSuchAlgorithmException {
+	private Funcionario converterDtoParaFuncionario(@Valid CadastroPFDto cadastroPFDto, BindingResult result)
+			throws NoSuchAlgorithmException {
 		Funcionario funcionario = new Funcionario();
 		funcionario.setNome(cadastroPFDto.getNome());
 		funcionario.setEmail(cadastroPFDto.getEmail());
@@ -119,11 +119,22 @@ public class CadastroPFController {
 
 		return funcionario;
 	}
-	
 
 	private CadastroPFDto converterCadastroPFDto(Funcionario funcionario) {
-		
-		return null;
+		CadastroPFDto cadastroPFDto = new CadastroPFDto();
+		cadastroPFDto.setId(funcionario.getId());
+		cadastroPFDto.setNome(funcionario.getNome());
+		cadastroPFDto.setEmail(funcionario.getEmail());
+		cadastroPFDto.setCpf(funcionario.getCpf());
+		cadastroPFDto.setCnpj(funcionario.getEmpresa().getCnpj());
+		funcionario.getQtdHorasAlmocoOpt().ifPresent(
+				qtdHorasAlmoco -> cadastroPFDto.setQtdHoraAlmoco(Optional.of(Float.toString(qtdHorasAlmoco))));
+		funcionario.getQtdHorasTrabalhoDiaOpt().ifPresent(qtdHorasTrabalhoDia -> cadastroPFDto
+				.setQtdHoraTrabalhoDia(Optional.of(Float.toString(qtdHorasTrabalhoDia))));
+		funcionario.getValorHoraOpt()
+				.ifPresent(valorHora -> cadastroPFDto.setValorHora(Optional.ofNullable(valorHora.toString())));
+
+		return cadastroPFDto;
 	}
 
 }
