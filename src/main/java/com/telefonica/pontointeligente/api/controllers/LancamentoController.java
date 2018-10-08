@@ -195,7 +195,7 @@ public class LancamentoController {
 		lancamentoDto.setId(Optional.of(lancamento.getId()));
 		lancamentoDto.setData(this.dateFormat.format(lancamento.getData()));
 		lancamentoDto.setTipo(lancamento.getTipo().toString());
-		lancamentoDto.setDescrição(lancamento.getDescricao());
+		lancamentoDto.setDescricao(lancamento.getDescricao());
 		lancamentoDto.setLocalizacao(lancamento.getLocalizacao());
 		lancamentoDto.setFuncionarioId(lancamento.getFuncionario().getId());
 
@@ -245,7 +245,7 @@ public class LancamentoController {
 			lancamento.getFuncionario().setId(lancamentoDto.getFuncionarioId());
 		}
 		
-		lancamento.setDescricao(lancamentoDto.getDescrição());
+		lancamento.setDescricao(lancamentoDto.getDescricao());
 		lancamento.setLocalizacao(lancamentoDto.getLocalizacao());
 		lancamento.setData(this.dateFormat.parse(lancamentoDto.getData()));
 		
