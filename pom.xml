@@ -76,13 +76,6 @@
 			<artifactId>spring-security-test</artifactId>
 		</dependency>
 
-		<!-- Hibernate validator -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.hibernate</groupId> -->
-		<!-- <artifactId>hibernate-validator</artifactId> -->
-		<!-- <version>4.0.2.GA</version> -->
-		<!-- </dependency> -->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
@@ -105,11 +98,18 @@
 			<version>3.6</version>
 		</dependency>
 
+		<!-- JWT Token -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.7.0</version>
+		</dependency>
+
 		<!--Togglz -->
 <!-- 		<dependency> -->
-<!-- 			<groupId>org.togglz</groupId> -->
-<!-- 			<artifactId>togglz-spring-boot-starter</artifactId> -->
-<!-- 			<version>2.6.1.Final</version> -->
+<!-- 		<groupId>org.togglz</groupId> -->
+<!-- 		<artifactId>togglz-spring-boot-starter</artifactId> -->
+<!-- 		<version>2.6.1.Final</version> -->
 <!-- 		</dependency> -->
 	</dependencies>
 

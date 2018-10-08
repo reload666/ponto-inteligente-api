@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.telefonica.pontointeligente.api.dto.CadastroPFDto;
+import com.telefonica.pontointeligente.api.dtos.CadastroPFDto;
 import com.telefonica.pontointeligente.api.entities.Empresa;
 import com.telefonica.pontointeligente.api.entities.Funcionario;
 import com.telefonica.pontointeligente.api.enums.PerfilEnum;

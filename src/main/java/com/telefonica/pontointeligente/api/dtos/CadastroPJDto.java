@@ -1,4 +1,4 @@
-package com.telefonica.pontointeligente.api.dto;
+package com.telefonica.pontointeligente.api.dtos;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

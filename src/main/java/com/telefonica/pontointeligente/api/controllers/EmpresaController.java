@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.telefonica.pontointeligente.api.dto.EmpresaDto;
+import com.telefonica.pontointeligente.api.dtos.EmpresaDto;
 import com.telefonica.pontointeligente.api.entities.Empresa;
 import com.telefonica.pontointeligente.api.response.Response;
 import com.telefonica.pontointeligente.api.services.EmpresaService;

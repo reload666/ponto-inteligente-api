@@ -1,4 +1,4 @@
-package com.telefonica.pontointeligente.api.dto;
+package com.telefonica.pontointeligente.api.dtos;
 
 public class EmpresaDto {
 	
