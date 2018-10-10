@@ -41,16 +41,16 @@ public class FuncionarioController {
 		super();
 	}
 
-	@GetMapping(value = "/{id}")
-	public ResponseEntity<Response<FuncionarioDto>> teste(@PathVariable("id") Long id) throws NoSuchAlgorithmException {
-
-		Response<FuncionarioDto> response = new Response<FuncionarioDto>();
-		Optional<Funcionario> funcionario = this.funcionarioService.buscarPorId(id);
-
-		response.setData(this.converterFuncionarioDto(funcionario.get()));
-		return ResponseEntity.ok(response);
-
-	}
+//	@GetMapping(value = "/{id}")
+//	public ResponseEntity<Response<FuncionarioDto>> teste(@PathVariable("id") Long id) throws NoSuchAlgorithmException {
+//
+//		Response<FuncionarioDto> response = new Response<FuncionarioDto>();
+//		Optional<Funcionario> funcionario = this.funcionarioService.buscarPorId(id);
+//
+//		response.setData(this.converterFuncionarioDto(funcionario.get()));
+//		return ResponseEntity.ok(response);
+//
+//	}
 
 	
 	@PutMapping(value = "/{id}")

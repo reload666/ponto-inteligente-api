@@ -27,14 +27,19 @@ public class LancamentoServiceImpl implements LancamentoService {
 		return this.lancamentoRepository.findByFuncionarioId(funcionarioId, pageRequest);
 	}
 
-	 @Override
-	 public Optional<Lancamento> buscarPorId(Long id) {
-	 log.info("Buscando um lançamento pelo ID {}", id);
-	 Optional<Lancamento> lancamento = Optional.empty();
-	 lancamento = this.lancamentoRepository.findById(id);
-	
-	 return lancamento;
-	 }
+	// @Override
+	// public Optional<Lancamento> buscarPorId(Long id) {
+	// log.info("Buscando um lançamento pelo ID {}", id);
+	// Optional<Lancamento> lancamento = Optional.empty();
+	// lancamento = this.lancamentoRepository.findById(id);
+	//
+	// return lancamento;
+	// }
+
+	public Optional<Lancamento> buscarPorId(Long id) {
+		log.info("Buscando um lançamento pelo ID {}", id);
+		return Optional.ofNullable(this.lancamentoRepository.findOne(id));
+	}
 
 	@Override
 	public Lancamento persistir(Lancamento lancamento) {
@@ -45,7 +50,7 @@ public class LancamentoServiceImpl implements LancamentoService {
 	@Override
 	public void remover(Long id) {
 		log.info("Removendo o lançamento ID {}", id);
-		this.lancamentoRepository.deleteById(id);
+		this.lancamentoRepository.delete(id);
 
 	}
 

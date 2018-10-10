@@ -2,8 +2,9 @@ package com.telefonica.pontointeligente.api.repositories;
 
 import java.util.List;
 
-import org.hibernate.annotations.NamedQueries;
-import org.hibernate.annotations.NamedQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

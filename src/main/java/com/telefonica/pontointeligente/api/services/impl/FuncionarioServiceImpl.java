@@ -37,14 +37,19 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 		return Optional.ofNullable(this.funcionarioRepository.findByEmail(email));
 	}
 
-	@Override
-	public Optional<Funcionario> buscarPorId(Long id) {
-		log.info("Persistindo ID: {}", id);
-		Optional<Funcionario> funcionario = Optional.empty();
-		funcionario = this.funcionarioRepository.findById(id);
-		System.out.println(funcionario.get().getEmail());
-		return funcionario;
+	// @Override
+	// public Optional<Funcionario> buscarPorId(Long id) {
+	// log.info("Persistindo ID: {}", id);
+	// Optional<Funcionario> funcionario = Optional.empty();
+	// funcionario = this.funcionarioRepository.findById(id);
+	//
+	// return funcionario;
+	//
+	// }
 
+	public Optional<Funcionario> buscarPorId(Long id) {
+		log.info("Buscando funcionário pelo IDl {}", id);
+		return Optional.ofNullable(this.funcionarioRepository.findOne(id));
 	}
 
 }

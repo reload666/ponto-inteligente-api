@@ -2,7 +2,7 @@ package com.telefonica.pontointeligente.api.dtos;
 
 import java.util.Optional;
 
-import javax.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class LancamentoDto {
 	
