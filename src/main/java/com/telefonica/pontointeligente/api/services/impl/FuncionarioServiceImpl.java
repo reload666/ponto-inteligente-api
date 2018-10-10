@@ -42,7 +42,7 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 		log.info("Persistindo ID: {}", id);
 		Optional<Funcionario> funcionario = Optional.empty();
 		funcionario = this.funcionarioRepository.findById(id);
-
+		System.out.println(funcionario.get().getEmail());
 		return funcionario;
 
 	}

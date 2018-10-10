@@ -36,6 +36,7 @@ DROP TABLE IF EXISTS `lancamento`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `lancamento` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+   `data` datetime NOT NULL, 
   `data_atualizacao` datetime NOT NULL,
   `data_criacao` datetime NOT NULL,
   `descricao` varchar(255) DEFAULT NULL,

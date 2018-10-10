@@ -13,11 +13,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.telefonica.pontointeligente.api.dtos.FuncionarioDto;
 import com.telefonica.pontointeligente.api.entities.Funcionario;
@@ -39,6 +41,18 @@ public class FuncionarioController {
 		super();
 	}
 
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Response<FuncionarioDto>> teste(@PathVariable("id") Long id) throws NoSuchAlgorithmException {
+
+		Response<FuncionarioDto> response = new Response<FuncionarioDto>();
+		Optional<Funcionario> funcionario = this.funcionarioService.buscarPorId(id);
+
+		response.setData(this.converterFuncionarioDto(funcionario.get()));
+		return ResponseEntity.ok(response);
+
+	}
+
+	
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<Response<FuncionarioDto>> atualizar(@PathVariable("id") Long id,
 			@Valid @RequestBody FuncionarioDto funcionarioDto, BindingResult result) throws NoSuchAlgorithmException {
